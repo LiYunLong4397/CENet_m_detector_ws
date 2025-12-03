@@ -1,0 +1,22 @@
+# M-Detector语义分割配置
+
+dyn_obj:
+  # 原有配置
+  points_topic: "/velodyne_points"
+  odom_topic: "/Odometry"
+  out_file: "/tmp/m_detector/dyn"
+  out_file_origin: "/tmp/m_detector/origin"
+  
+  # 语义分割配置
+  use_semantic: true
+  semantic_model_path: "/home/ergou/CENet/checkpoints/model_best.pth"
+  semantic_config_path: "/home/ergou/CENet/config/semantic-kitti.yaml"
+  semantic_weight: 0.3
+  
+  # 语义辅助的动态检测阈值
+  occluded_map_thr1_dyn: 2.0
+  occluded_map_thr1_static: 5. 0
+  
+  # 聚类参数
+  min_cluster_size_dyn: 5
+  min_cluster_size_static: 10

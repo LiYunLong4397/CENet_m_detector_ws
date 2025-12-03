@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>m_detector_semantic</name>
+  <version>1.0.0</version>
+  <description>M-detector with CENet semantic segmentation integration</description>
+  
+  <maintainer email="ergou@example.com">ergou</maintainer>
+  
+  <license>GPL-2.0</license>
+  
+  <url type="website">https://github. com/your_repo/m_detector_semantic</url>
+  
+  <author email="ergou@example.com">ergou</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>pcl_conversions</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>eigen_conversions</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>libpcl-all-dev</build_depend>
+  <build_depend>libeigen3-dev</build_depend>
+  <build_depend>libopencv-dev</build_depend>
+  
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>nav_msgs</build_export_depend>
+  <build_export_depend>pcl_ros</build_export_depend>
+  <build_export_depend>pcl_conversions</build_export_depend>
+  <build_export_depend>tf</build_export_depend>
+  <build_export_depend>eigen_conversions</build_export_depend>
+  
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>pcl_ros</exec_depend>
+  <exec_depend>pcl_conversions</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>eigen_conversions</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>libpcl-all</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+
+</package>

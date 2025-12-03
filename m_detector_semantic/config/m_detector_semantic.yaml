@@ -1,0 +1,107 @@
+dyn_obj:
+  # ========== 话题配置 ==========
+  points_topic: "/velodyne_points"
+  odom_topic: "/Odometry"
+  
+  # ========== 输出文件 ==========
+  out_file: "/tmp/m_detector/dyn"
+  out_file_origin: "/tmp/m_detector/origin"
+  
+  # ========== 帧ID ==========
+  frame_id: "camera_init"
+  
+  # ========== 数据集类型 ==========
+  dataset: 0  # 0: KITTI, 1: other
+  
+  # ========== 功能开关 ==========
+  dyn_filter_en: true
+  debug_en: false
+  
+  # ========== 聚类配置 ==========
+  cluster_coupled: true
+  cluster_future: false
+  cluster_distance: 0.5
+  min_cluster_size: 10
+  min_cluster_size_dyn: 5
+  min_cluster_size_static: 15
+  
+  # ========== FOV 参数（度） ==========
+  fov_up: 2.0
+  fov_down: -23.0
+  fov_cut: -20.0
+  blind_dis: 0.3
+  
+  # ========== 时间参数（秒） ==========
+  frame_dur: 0.1
+  depth_map_dur: 0.2
+  max_depth_map_num: 5
+  buffer_delay: 0.1
+  
+  # ========== 分辨率（弧度） ==========
+  hor_resolution_max: 0.02
+  ver_resolution_max: 0.02
+  
+  # ========== Case 1 参数 ==========
+  occluded_map_thr1: 3.0
+  
+  # ========== Case 2 参数 ==========
+  occluded_times_thr2: 3
+  occ_depth_thr2: 0.15
+  occ_hor_thr2: 0.02
+  occ_ver_thr2: 0.01
+  depth_cons_depth_thr2: 0.15
+  depth_cons_hor_thr2: 0.02
+  depth_cons_ver_thr2: 0.01
+  depth_cons_hor_num2: 0
+  depth_cons_ver_num2: 0
+  k_depth2: 0.005
+  
+  # ========== Case 3 参数 ==========
+  occluding_times_thr3: 3
+  occ_depth_thr3: 0.15
+  occ_hor_thr3: 0.02
+  occ_ver_thr3: 0.01
+  map_cons_depth_thr3: 0.15
+  map_cons_hor_thr3: 0.02
+  map_cons_ver_thr3: 0.01
+  depth_cons_depth_thr3: 0.15
+  depth_cons_depth_max_thr3: 0.15
+  depth_cons_hor_thr3: 0.02
+  depth_cons_ver_thr3: 0.01
+  depth_cons_hor_num3: 0
+  depth_cons_ver_num3: 0
+  k_depth3: 0.005
+  k_depth_max_thr3: 0.02
+  d_depth_max_thr3: 1.0
+  cutoff_value: 0.1
+  v_min_thr3: 1.0
+  enlarge_distort: 1.5
+  
+  # ========== 车辆尺寸（米） ==========
+  self_x_f: 2.5
+  self_x_b: -1.5
+  self_y_l: 1.6
+  self_y_r: -1.6
+  
+  # ========== 语义分割配置 ==========
+  use_semantic: true
+  semantic_model_path: "/home/ergou/CENet/checkpoints/model_best.pth"
+  semantic_config_path: "/home/ergou/CENet/config/semantic-kitti.yaml"
+  
+  # ========== 语义融合参数 ==========
+  semantic_dyn_weight: 0.3          # 语义先验权重 (0-1)
+  semantic_conf_threshold: 0.5       # 使用语义的最小置信度
+  
+  # ========== 语义自适应阈值 ==========
+  occluded_map_thr1_dyn: 2.0        # 动态类别的较低阈值
+  occluded_map_thr1_static: 5.0     # 静态类别的较高阈值
+  
+  # ========== 语义聚类参数 ==========
+  semantic_cluster_distance_same: 0.3   # 相同语义类别
+  semantic_cluster_distance_diff: 0.8   # 不同语义类别
+  
+  # ========== 体素滤波 ==========
+  voxel_filter_size: 0.5
+  
+  # ========== 累积参数 ==========
+  laserCloudSteadObj_accu_limit: 10

@@ -1,0 +1,35 @@
+model:
+  n_class: 20
+  input_channel: 5
+
+dataset:
+  name: "semantic-kitti"
+  sensor:
+    name: "HDL64"
+    fov_up: 3.0
+    fov_down: -25.0
+    img_prop:
+      height: 64
+      width: 2048
+  
+  labels:
+    0: "unlabeled"
+    1: "car"
+    2: "bicycle"
+    3: "motorcycle"
+    4: "truck"
+    5: "other-vehicle"
+    6: "person"
+    7: "bicyclist"
+    8: "motorcyclist"
+    9: "road"
+    10: "parking"
+    11: "sidewalk"
+    12: "other-ground"
+    13: "building"
+    14: "fence"
+    15: "vegetation"
+    16: "trunk"
+    17: "terrain"
+    18: "pole"
+    19: "traffic-sign"

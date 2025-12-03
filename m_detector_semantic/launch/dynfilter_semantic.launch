@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Arguments -->
+    <arg name="rviz" default="true"/>
+    <arg name="use_semantic" default="true"/>
+    
+    <!-- Load parameters -->
+    <rosparam command="load" file="$(find m_detector_semantic)/config/m_detector_semantic.yaml"/>
+    
+    <!-- Override semantic paths if needed -->
+    <param name="dyn_obj/use_semantic" value="$(arg use_semantic)"/>
+    <param name="dyn_obj/semantic_model_path" value="$(env HOME)/CENet/checkpoints/model_best.pth"/>
+    <param name="dyn_obj/semantic_config_path" value="$(find m_detector_semantic)/config/semantic-kitti.yaml"/>
+    
+    <!-- Main node -->
+    <node pkg="m_detector_semantic" type="m_detector_semantic_node" name="m_detector_semantic" output="screen">
+        <!-- Topic remapping - adjust to your topics -->
+        <remap from="/velodyne_points" to="/velodyne_points"/>
+        <remap from="/Odometry" to="/Odometry"/>
+    </node>
+    
+    <!-- Visualization node -->
+    <node pkg="m_detector_semantic" type="visualization_semantic_node" name="visualization_semantic" output="screen"/>
+    
+    <!-- RViz -->
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" 
+          args="-d $(find m_detector_semantic)/rviz/semantic_visual.rviz"/>
+    
+</launch>
